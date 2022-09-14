@@ -5,6 +5,7 @@ namespace App\Controller;
 
 
 use App\Auth\Command\AuthUser;
+use App\Auth\Command\ConfirmByEmail;
 use App\Auth\Command\CreateRefreshToken;
 use App\Auth\Command\CreateToken;
 use App\Auth\Command\SignInUser;
@@ -49,6 +50,17 @@ class RestController
         $data=$request->getParsedBody();
 
         $user=AuthUser::auth($data['email'],$data['password']);
+        $token=CreateToken::create($user->id,$this->container);
+        $refresh=CreateRefreshToken::create($user->id,$this->container);
+
+        return Http::json($response,['refresh'=>$refresh,'token'=>$token]);
+    }
+
+    public function confirmByEmail(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        $data=$request->getParsedBody();
+
+        $user=ConfirmByEmail::confirm($data['token']);
         $token=CreateToken::create($user->id,$this->container);
         $refresh=CreateRefreshToken::create($user->id,$this->container);
 

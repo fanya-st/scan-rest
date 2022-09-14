@@ -20,7 +20,7 @@ class User extends Model
     public function verifyPassword(string $password)
     {
         if(!password_verify($password,$this->password_hash))
-            return throw new \DomainException('Invalid email or passsword');
+            return throw new \DomainException('Invalid email or password');
         return true;
     }
 
