@@ -4,28 +4,26 @@
 namespace App\Models;
 
 
-use App\Object\Email;
-use Doctrine\ORM\Mapping\Entity;
-use Doctrine\ORM\Mapping\Table;
 
-#[Entity,Table(name:'user')]
-class User
+use Illuminate\Database\Eloquent\Model;
+
+class User extends Model
 {
-    private int $id;
-    private Email $email;
-    private string $password_hash;
+    protected $primaryKey = 'id';
+    protected $table='users.user';
 
-
-    public function __construct(Email $email, string $password_hash){
-        $this->email=$email;
-        $this->password_hash=$password_hash;
-    }
-
-
-    public function getId(): int
+    public function findOne(int $id): Model|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Builder|array|null
     {
-        return $this->id;
+        return self::query()->find($id)->getModel()->get();
     }
+
+    public function verifyPassword(string $password)
+    {
+        if(!password_verify($password,$this->password_hash))
+            return throw new \DomainException('Invalid email or passsword');
+        return true;
+    }
+
 
 
 }

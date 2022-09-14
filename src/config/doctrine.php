@@ -1,6 +1,7 @@
 <?php
 
 use DI\Container;
+use Doctrine\DBAL\Types\Type;
 
 return [
     \Doctrine\ORM\EntityManagerInterface::class=>function(Container $container): \Doctrine\ORM\EntityManagerInterface{
@@ -12,6 +13,14 @@ return [
             $settings['doctrine']['cache_dir'],
         );
         $config->setNamingStrategy(new \Doctrine\ORM\Mapping\UnderscoreNamingStrategy());
+
+        foreach($settings['doctrine']['types'] as $name=>$class){
+            if(!Type::hasType($name)){
+                Type::addType($name,$class);
+            }
+
+        }
+
         return \Doctrine\ORM\EntityManager::create(
             $settings['doctrine']['connection'],
             $config
