@@ -136,6 +136,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'egulias/email-validator' => array(
+            'pretty_version' => '3.2.1',
+            'version' => '3.2.1.0',
+            'reference' => 'f88dcf4b14af14a98ad96b14b2b317969eab6715',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../egulias/email-validator',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'fig/http-message-util' => array(
             'pretty_version' => '1.1.5',
             'version' => '1.1.5.0',
@@ -289,8 +298,8 @@
         'psr/container-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '^1.0',
-                1 => '1.0',
+                0 => '1.0',
+                1 => '^1.0',
             ),
         ),
         'psr/http-factory' => array(
@@ -422,6 +431,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'swiftmailer/swiftmailer' => array(
+            'pretty_version' => 'v6.3.0',
+            'version' => '6.3.0.0',
+            'reference' => '8a5d5072dca8f48460fce2f4131fcc495eec654c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../swiftmailer/swiftmailer',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'symfony/cache' => array(
             'pretty_version' => 'v5.4.11',
             'version' => '5.4.11.0',
@@ -473,12 +491,30 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'symfony/polyfill-iconv' => array(
+            'pretty_version' => 'v1.26.0',
+            'version' => '1.26.0.0',
+            'reference' => '143f1881e655bebca1312722af8068de235ae5dc',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-iconv',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'symfony/polyfill-intl-grapheme' => array(
             'pretty_version' => 'v1.26.0',
             'version' => '1.26.0.0',
             'reference' => '433d05519ce6990bf3530fba6957499d327395c2',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/polyfill-intl-grapheme',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/polyfill-intl-idn' => array(
+            'pretty_version' => 'v1.26.0',
+            'version' => '1.26.0.0',
+            'reference' => '59a8d271f00dd0e4c2e518104cc7963f655a1aa8',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-intl-idn',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

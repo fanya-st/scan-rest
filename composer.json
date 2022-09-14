@@ -10,7 +10,8 @@
         "doctrine/orm": "^2.13",
         "symfony/cache": "^5.4",
         "doctrine/annotations": "^1.13",
-        "illuminate/database": "*"
+        "illuminate/database": "*",
+        "swiftmailer/swiftmailer": "^6.3"
     },
     "autoload": {
         "psr-4": {
