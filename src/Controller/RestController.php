@@ -35,7 +35,7 @@ class RestController
 
     public function test(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
-        return Http::json($response,User::query()->where('email','=','tech@alprint.org')->getModel()->get());
+        return Http::json($response,'Hello');
     }
     public function signByEmail(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
@@ -68,5 +68,11 @@ class RestController
         $refresh=CreateRefreshToken::create($user->id,$this->container);
 
         return Http::json($response,['refresh'=>$refresh,'token'=>$token]);
+    }
+
+    public function changePassword(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+
+        return Http::json($response,'');
     }
 }

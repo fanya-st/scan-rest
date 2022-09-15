@@ -31,10 +31,10 @@ class CreateConfirmToken
         $mailer = new Swift_Mailer($mail);
 
         // Create a message
-        $message = (new Swift_Message('Wonderful Subject'))
-            ->setFrom(['john@doe.com' => 'John Doe'])
-            ->setTo([$user->email => 'A name'])
-            ->setBody('/sign-confirm-email/'.$confirm->token);
+        $message = (new Swift_Message('Confirmation code'))
+            ->setFrom(['john@doe.com' => 'scan-rest'])
+            ->setTo([$user->email => $user->email])
+            ->setBody($_SERVER['SERVER_NAME'].'/sign-confirm-email/'.$confirm->token);
         //
         // Send the message
         $mailer->send($message);

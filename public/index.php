@@ -16,7 +16,7 @@ $container = $builder->build();
 // Instantiate App
 $app=AppFactory::createFromContainer($container);
 
-(require __DIR__.'/../src/config/middleware.php')($app);
+(require __DIR__.'/../src/config/middleware.php')($app, $container);
 (require __DIR__.'/../src/config/routes.php')($app);
 (require __DIR__.'/../src/config/eloquent.php')($app);
 

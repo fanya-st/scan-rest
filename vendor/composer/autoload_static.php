@@ -34,6 +34,11 @@ class ComposerStaticInitd707f079839198d6f507a3d58146bbd4
         array (
             'voku\\' => 5,
         ),
+        'T' => 
+        array (
+            'Tuupola\\Middleware\\' => 19,
+            'Tuupola\\Http\\Factory\\' => 21,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php81\\' => 23,
@@ -127,6 +132,15 @@ class ComposerStaticInitd707f079839198d6f507a3d58146bbd4
         'voku\\' => 
         array (
             0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
+        ),
+        'Tuupola\\Middleware\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tuupola/callable-handler/src',
+            1 => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src',
+        ),
+        'Tuupola\\Http\\Factory\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tuupola/http-factory/src',
         ),
         'Symfony\\Polyfill\\Php81\\' => 
         array (
