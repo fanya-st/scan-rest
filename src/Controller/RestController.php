@@ -78,7 +78,7 @@ class RestController
         $data=$request->getParsedBody();
         //если токен истек то выкинет исключение
         $token=JWT::decode($data['token'],new Key($this->container->get('jwt-secret'),'HS256'));
-        if(ChangePassword::change($token->user_id,$data['old_password'],$data['new_password']))
+        if(ChangePassword::change($token->user_id,$data['new_password']))
         {
             $user=User::findOne($token->user_id);
             $token=CreateToken::create($user->id,$this->container);
