@@ -9,6 +9,6 @@ return static function(App $app):void {
     $app->post('/sign-email', RestController::class . ':signByEmail');
     $app->get('/sign-confirm-email/{token}', RestController::class . ':confirmByEmail');
     $app->post('/login', RestController::class . ':login');
-    $app->get('/change-password', RestController::class . ':changePassword');
+    $app->post('/change-password', RestController::class . ':changePassword');
 
 };

@@ -14,9 +14,9 @@ class CreateToken
         $conf = [
             "iss" => "scan",
             "aud" => "scan",
-            "iat" => new \DateTimeImmutable(),
-            "exp" => new \DateTimeImmutable('+1 hour'),
-            "user_uuid" => $user_id,
+            "iat" => time(),
+            "exp" => time()+ 3600,
+            "user_id" => $user_id,
         ];
 
         return JWT::encode($conf,$container->get('jwt-secret'),'HS256');

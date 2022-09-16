@@ -12,9 +12,9 @@ class User extends Model
     protected $primaryKey = 'id';
     protected $table='users.user';
 
-    public function findOne(int $id): Model|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Builder|array|null
+    public static function findOne(int $id): Model|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Builder|array|null
     {
-        return self::query()->find($id)->getModel()->get();
+        return self::query()->find($id)->getModel();
     }
 
     public function verifyPassword(string $password)

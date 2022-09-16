@@ -8,7 +8,7 @@ return static function(App $app, \Psr\Container\ContainerInterface $container):v
         'algorithm' => 'HS256',
         "path" => ["/change-password"],
         /*игнорирование для тестового сервера*/
-//        "ignore" => ["/change-password"],
+        "ignore" => ["/change-password"],
         "secure"=>false,
         "relaxed"=>["scan-rest"],
         "secret" => $container->get('jwt-secret')

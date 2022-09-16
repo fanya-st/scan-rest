@@ -15,8 +15,8 @@ class CreateRefreshToken
         $conf = [
             "iss" => "scan",
             "aud" => "scan",
-            "iat" => new \DateTimeImmutable(),
-            "exp" => new \DateTimeImmutable('+1 day'),
+            "iat" => time(),
+            "exp" => time()+86400,
             "user_uuid" => $user_id,
         ];
         UserRefreshToken::query()->where('user_id','=',$user_id)->delete();
